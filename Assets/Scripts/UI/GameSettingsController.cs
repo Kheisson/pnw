@@ -36,8 +36,8 @@ namespace UI
             playerSpeedSlider.maxValue = 100;
             
             orthoSizeSlider.value = cinemachineCamera.m_Lens.OrthographicSize;
-            playerRotationSpeedSlider.value = playerMovement.rotationSpeed;
-            playerSpeedSlider.value = playerMovement.moveSpeed;
+            //playerRotationSpeedSlider.value = playerMovement.rotationSpeed;
+            //playerSpeedSlider.value = playerMovement.moveSpeed;
 
             // Add listeners to sliders
             cameraRotationSlider.onValueChanged.AddListener(OnCameraRotationChanged);
@@ -66,13 +66,13 @@ namespace UI
 
         private void OnPlayerRotationSpeedChanged(float value)
         {
-            playerMovement.rotationSpeed = value;
+           // playerMovement.rotationSpeed = value;
             UpdatePlayerRotationSpeedText(value);
         }
 
         private void OnPlayerSpeedChanged(float value)
         {
-            playerMovement.moveSpeed = value;
+            //playerMovement.moveSpeed = value;
             UpdatePlayerSpeedText(value);
         }
 
