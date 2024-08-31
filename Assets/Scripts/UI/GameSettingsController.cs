@@ -1,6 +1,5 @@
 using Cinemachine;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using PlayerSettings = Player.PlayerSettings;
@@ -9,7 +8,7 @@ namespace UI
 {
     public class GameSettingsController : MonoBehaviour
     {
-        private const string PLAYER_SETTINGS_PATH = "Assets/Data/PlayerSettings.asset";
+        private const string PLAYER_SETTINGS_PATH = "Data/PlayerSettings";
         public Slider cameraRotationSlider;
         public TextMeshProUGUI cameraRotationText;
 
@@ -27,7 +26,7 @@ namespace UI
 
         private void Awake()
         {
-            playerSettings = AssetDatabase.LoadAssetAtPath<PlayerSettings>(PLAYER_SETTINGS_PATH);
+            playerSettings = Resources.Load<PlayerSettings>(PLAYER_SETTINGS_PATH);
         }
 
         private void Start()
