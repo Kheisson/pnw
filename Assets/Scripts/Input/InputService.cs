@@ -1,9 +1,8 @@
 using UnityEngine;
-using Zenject;
 
 namespace Input
 {
-    public class InputService : IInputService, ITickable
+    public class InputService : IInputService
     {
         private readonly PlayerInputs _playerInputs;
         private Vector2 _movementInput;
@@ -13,13 +12,19 @@ namespace Input
         public InputService()
         {
             _playerInputs = new PlayerInputs();
-            _playerInputs.Player.Move.performed += ctx => _movementInput = ctx.ReadValue<Vector2>();
-            _playerInputs.Player.Move.canceled += ctx => _movementInput = Vector2.zero;
+            OnMovePerformed();
+            OnMoveCanceled();
             _playerInputs.Enable();
         }
 
-        public void Tick()
+        private void OnMoveCanceled()
         {
+            _playerInputs.Player.Move.canceled += ctx => _movementInput = Vector2.zero;
+        }
+
+        private void OnMovePerformed()
+        {
+            _playerInputs.Player.Move.performed += ctx => _movementInput = ctx.ReadValue<Vector2>();
         }
     }
 }
