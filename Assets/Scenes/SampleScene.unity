@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 149198648}
   - component: {fileID: 149198647}
   - component: {fileID: 149198653}
-  - component: {fileID: 149198652}
   - component: {fileID: 149198654}
   m_Layer: 0
   m_Name: Player
@@ -269,18 +268,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &149198652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149198646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0050a17415d84c978eb809d84f29182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &149198653
 CharacterController:
   m_ObjectHideFlags: 0
@@ -567,7 +554,7 @@ MonoBehaviour:
   playerSpeedSlider: {fileID: 339766969}
   playerSpeedText: {fileID: 641233524}
   cinemachineCamera: {fileID: 627574086}
-  playerMovement: {fileID: 149198652}
+  playerSettings: {fileID: 0}
 --- !u!1 &321404792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,7 +1806,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.36964378, z: -0.09904577, w: 0.8923991}
-  m_LocalPosition: {x: -6.1237235, y: 6.0000005, z: -6.1237245}
+  m_LocalPosition: {x: -6.1237235, y: 6, z: -6.1237245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3277,7 +3264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0cf7cab85347878fbf47d1866951f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSettings: {fileID: 11400000, guid: a2941443445284323a335836abe227ba, type: 2}
 --- !u!4 &1657579595
 Transform:
   m_ObjectHideFlags: 0
@@ -3305,7 +3291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 63617681d1cd548a699bcb67271bec65, type: 2}
   _monoInstallers:
   - {fileID: 1657579593}
   _installerPrefabs: []
